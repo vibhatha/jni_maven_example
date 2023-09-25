@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.10)
+project(NativeLib)
+find_package(JNI REQUIRED)
+include_directories(src/main/native/include)
+add_library(NativeLib SHARED NativeLib.cpp)
+target_include_directories(NativeLib PUBLIC ${JNI_INCLUDE_DIRS})
